@@ -15,13 +15,29 @@ const doOtherThingPromise = new Promise((resolve, reject) => {
 
 console.log(doOtherThingPromise)
 
+doSomethingPromise.then(data => console.log(data)).catch(error => console.log(error))
+
+//'then': executa a promise E 'catch': trata possível erro
+
 /* 
+Outra estrutura possível:
+doSomethingPromise
+	.then(data => console.log(data))
+	.catch(error => console.log(error))
+/* 
+
+
 Estágios de uma promise:
 Pendin - Pendente 
 Fulfilled - Terminou de executar
 Rejected - Erro
 */
 
+
+doSomethingPromise  //Encadeamento de promises
+	.then(data => doOtherThingPromise)
+	.then(data2 => console.log(data2))
+	.catch()
 
 //Callback
 
