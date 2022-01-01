@@ -22,9 +22,13 @@ function doAll() {
 				doOtherThing(function (data2) {
 					var processedData2 = data2.split('');
 
-					setTimeout(function () {
-						console.log(processedData, processedData2)
-					}, 1000)
+					try {
+						setTimeout(function () {
+							console.log(processedData, processedData2)
+						}, 1000)
+					} catch (err) {
+						//handle erro
+					}
 				})
 			} catch (err) {
 				//handle erro
