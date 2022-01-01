@@ -1,3 +1,30 @@
+//Promises
+const doSomethingPromise = new Promise((resolve, reject) => {
+	setTimeout(function () {
+		//did something
+		resolve('First data')
+	}, 1000)
+})
+
+const doOtherThingPromise = new Promise((resolve, reject) => {
+	setTimeout(function () {
+		//did something
+		resolve('Second data')
+	}, 1000)
+})
+
+console.log(doOtherThingPromise)
+
+/* 
+Estágios de uma promise:
+Pendin - Pendente 
+Fulfilled - Terminou de executar
+Rejected - Erro
+*/
+
+
+//Callback
+
 function doSomething(callback) {
 	setTimeout(function () {
 		//did something
